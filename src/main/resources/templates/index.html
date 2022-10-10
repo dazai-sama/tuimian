@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common::commonHeader(主界面)">
+    <meta charset="UTF-8">
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div th:include="common::commonNav" th:remove="tag"></div>
+        <div th:include="common::commonTop" th:remove="tag"></div>
+    </div>
+
+    <!--自己各模块的内容-->
+    <div class="right_col" role="main">
+        <div class="clearfix"></div>
+        <h1>2023年研究生推免注意事项</h1>
+
+
+    </div>
+
+    <footer th:include="common::commonDown"></footer>
+    <div th:include="common::commonJS" th:remove="tag"></div>
+
+
+</div>
+</body>
+</html>
