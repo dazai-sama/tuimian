@@ -7,8 +7,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title th:text="${title}">公共界面</title>
+    <title th:text="${title}">学生端</title>
 
+    <!--Bootstrap-table-->
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-table/1.21.1/bootstrap-table.min.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="/gentelella-master/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -62,7 +64,7 @@
                   <ul class="nav side-menu">
                     <li><a><i class="fa fa-star"></i> 注意事项 <span class="fa fa-chevron-right"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="listStudent.html">个人信息注意事项</a></li>
+                        <li><a th:href="@{/listStudent}">个人信息注意事项</a></li>
                         <li><a th:href="@{/listStudent}">志愿信息注意事项</a></li>
                       </ul>
                     </li>

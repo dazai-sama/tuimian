@@ -4,7 +4,6 @@ import com.example.tuimian.entity.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.data.domain.Page;
 
 import javax.transaction.Transactional;
 import java.util.List;

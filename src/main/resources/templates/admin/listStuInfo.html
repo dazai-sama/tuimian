@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>学生列表</title>
+    <script type="text/javascript" data-main="/jscustom/admin/ListUser.js" src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><span>研究生推免系统</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div th:include="common_admin::commonNav"></div>
+                </div>
+            </div>
+            <div th:include="common_admin::commonTop"></div>
+
+            <!-- 这里放我们的内容 -->
+            <div class="right_col" role="main">
+                <div class="clearfix"></div>
+                <h1><strong>学生列表</strong></h1>
+
+                <!--新增按钮-->
+                <div class="row" style="margin: 1px;padding: 1px">
+                    <div class="col-md-3">
+                        <button id="btn_add" type="button" class="btn btn-success btn-sm">
+                            <i class="fa fa-plus"></i> 新增公司
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <table id="tb_stu" style="cursor: pointer"></table>
+                    </div>
+                    <div class="col-md-2">
+                        <span id="detail_stu"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /这里放我们的内容-->
+
+        </div>
+    </div>
+</body>
+</html>

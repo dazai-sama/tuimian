@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>页面标题</title>
+</head>
+
+<body>
+    <!--左侧全部公共部分-->
+    <div th:fragment="commonNav">
+        <!-- logo及登录用户信息 -->
+        <div class="profile clearfix">
+            <div class="profile_pic">
+                <img src="/images/profile.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+                <span>欢迎,</span>
+                <h2>管理员</h2>
+            </div>
+        </div>
+        <!-- /logo及登录用户信息 -->
+        <br/>
+
+        <!-- 左侧导航栏 -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <h3>管理员端</h3>
+                <ul class="nav side-menu">
+                    <li><a><i class="fa fa-star"></i> 学生信息 <span class="fa fa-chevron-right"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a th:href="@{/admin/listStuInfo}">管理学生信息</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-edit"></i> 复试信息 <span class="fa fa-chevron-right"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="form.html">管理复试信息</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-desktop"></i> 拟录取信息 <span class="fa fa-chevron-right"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="general_elements.html">管理拟录取信息</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /左侧导航栏 -->
+    </div>
+    <!-- /左侧全部公共部分 -->
+
+    <!--顶部公共部分-->
+    <div th:fragment="commonTop">
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                    <ul class=" navbar-right">
+                        <li class="nav-item dropdown open" style="padding-left: 15px;">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                <img src="/images/profile.jpg" alt="">管理员
+                            </a>
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                                <a class="dropdown-item"  href="javascript:;">
+                                    <span class="badge bg-red pull-right">50%</span>
+                                    <span>Settings</span>
+                                </a>
+                                <a class="dropdown-item"  href="javascript:;">Help</a>
+                                <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                            </div>
+                        </li>
+                        <li role="presentation" class="nav-item dropdown open">
+                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="badge bg-green">6</span>
+                            </a>
+                            <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                                <li class="nav-item">
+                                    <a class="dropdown-item">
+                                        <span class="image"><img src="/images/profile.jpg" alt="Profile Image" /></span>
+                                        <span>
+                                <span>John Smith</span>
+                                <span class="time">3 mins ago</span>
+                          </span>
+                                            <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="/images/profile.jpg" alt="Profile Image" /></span>
+                                            <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                                            <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="/images/profile.jpg" alt="Profile Image" /></span>
+                                            <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                                            <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="/images/profile.jpg" alt="Profile Image" /></span>
+                                            <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                                            <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="text-center">
+                                            <a class="dropdown-item">
+                                                <strong>See All Messages</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                 </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--/顶部公共部分-->
+
+</body>
+</html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common::commonHeader(测试界面)">
+<head th:replace="common_stu::commonHeader(测试界面)">
     <meta charset="UTF-8">
 </head>
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
-      <div th:include="common::commonNav" th:remove="tag"></div>
-      <div th:include="common::commonTop" th:remove="tag"></div>
+      <div th:include="common_stu::commonNav" th:remove="tag"></div>
+      <div th:include="common_stu::commonTop" th:remove="tag"></div>
     </div>
 
     <!--自己各模块的内容-->
@@ -16,8 +16,8 @@
       <h1>这里放置我们定义的界面实际的内容</h1>
     </div>
 
-    <footer th:include="common::commonDown"></footer>
-    <div th:include="common::commonJS" th:remove="tag"></div>
+    <footer th:include="common_stu::commonDown"></footer>
+    <div th:include="common_stu::commonJS" th:remove="tag"></div>
   </div>
 </body>
 </html>
