@@ -27,19 +27,10 @@
             <div class="menu_section">
                 <h3>管理员端</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-star"></i> 学生信息 <span class="fa fa-chevron-right"></span></a>
+                    <li><a><i class="fa fa-star"></i> 管理模块 <span class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
-                            <li><a th:href="@{/admin/listStuInfo}">管理学生信息</a></li>
-                        </ul>
-                    </li>
-                    <li><a><i class="fa fa-edit"></i> 复试信息 <span class="fa fa-chevron-right"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="form.html">管理复试信息</a></li>
-                        </ul>
-                    </li>
-                    <li><a><i class="fa fa-desktop"></i> 拟录取信息 <span class="fa fa-chevron-right"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="general_elements.html">管理拟录取信息</a></li>
+                            <li><a th:href="@{/admin/listStuInfo}">志愿管理</a></li>
+                            <li><a th:href="@{/admin/ListAdmitHtml}">录取名单</a></li>
                         </ul>
                     </li>
                 </ul>

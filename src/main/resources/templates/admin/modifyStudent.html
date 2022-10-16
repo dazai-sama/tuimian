@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>修改学生信息</title>
+    <script type="text/javascript" data-main="/jscustom/admin/modifyStudent.js" src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" id="form_modifyStudent" method="post" style="margin: 5px">
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_id">志愿id：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="a_id" name="a_id" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_id">学生id：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_id" name="u_id" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_name">学生姓名：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_name" name="u_name" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_level"><span class="text-danger">*</span>申请层次：</label>
+            <div class="col-md-9 col-sm-9">
+                <select class="form-control" id="a_level" name="a_level" required="required">
+                    <option value="硕士">硕士</option>
+                    <option value="直博">直博</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_major"><span class="text-danger">*</span>申请专业：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="a_major" name="a_major" placeholder="填写要申请的专业" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_studytype"><span class="text-danger">*</span>学习方式：</label>
+            <div class="col-md-9 col-sm-9">
+                <select class="form-control" id="a_studytype" name="a_studytype" required="required">
+                    <option value="全日制">全日制</option>
+                    <option value="非全日制">非全日制</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_direction"><span class="text-danger">*</span>研究方向：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="a_direction" name="a_direction" placeholder="填写研究方向" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_tutor"><span class="text-danger">*</span>导师：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="a_tutor" name="a_tutor" placeholder="填写导师" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="a_orient"><span class="text-danger">*</span>定向就业：</label>
+            <div class="col-md-9 col-sm-9">
+                <select class="form-control" id="a_orient" name="a_orient" required="required">
+                    <option value="定向">定向</option>
+                    <option value="非定向">非定向</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button id="btn_reset" type="reset" class="btn btn-primary">重 置</button>
+            </div>
+            <div class="col-sm-6 text-left">
+                <button id="btn_modifySubmit" type="button" class="btn btn-success">修 改</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

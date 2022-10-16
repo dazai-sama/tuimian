@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>查看学生信息</title>
+    <script type="text/javascript" data-main="/jscustom/admin/lookupStudent.js" src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" id="form_modifyStudent" method="post" style="margin: 5px">
+        <h2><strong>个人基本信息</strong></h2>
+        <br>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_id">学生id：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_id" name="u_id" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_name">姓名：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_name" name="u_name" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_sex">性别：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_sex" name="u_sex" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_idnumber">身份证号：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_idnumber" name="u_idnumber" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_birthday">出生日期：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_birthday" name="u_birthday" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_location">居住地：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_location" name="u_location" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_nationality">民族：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_nationality" name="u_nationality" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_phone">手机号：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_phone" name="u_phone" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_email">电子邮箱：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_email" name="u_email" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_school">本科学校：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_school" name="u_school" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_major">本科专业：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_major" name="u_major" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_grank">成绩排名：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_grank" name="u_grank" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_srank">综合排名：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_srank" name="u_srank" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_politics">政治面貌：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_politics" name="u_politics" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="u_soldier">现役军人：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="u_soldier" name="u_soldier" readonly="readonly">
+            </div>
+        </div>
+        <br>
+
+        <div class="right_col" role="main">
+            <h2><strong>家庭成员</strong></h2>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <table id="tb_family" style="cursor: pointer"></table>
+                </div>
+            </div>
+            <br>
+            <h2><strong>竞赛获奖</strong></h2>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <table id="tb_prize" style="cursor: pointer"></table>
+                </div>
+            </div>
+            <br>
+            <h2><strong>科研经历</strong></h2>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <table id="tb_research" style="cursor: pointer"></table>
+                </div>
+            </div>
+            <br>
+            <h2><strong>社会实践</strong></h2>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <table id="tb_social" style="cursor: pointer"></table>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+</body>
+</html>

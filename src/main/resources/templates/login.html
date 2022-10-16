@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <script type="text/javascript" data-main="/jscustom/login.js" src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+    <!--session过期，跳转到首页并跳出iframe-->
+    <script type="text/javascript">
+        if (window != top)
+            top.location.href = location.href;
+    </script>
+</head>
+<body class="bg-white">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <br>
+            <h1 class="text-center">用户登录</h1>
+            <br>
+            <form class="form-horizontal" id="form_login" method="post" style="margin: 5px">
+                <div class="form-group row">
+                    <label class="col-md-4 col-sm-4 text-right" for="u_username"><span class="text-danger">*</span>用户名：</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input class="form-control"  type="text" id="u_username" name="u_username" required="required">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 col-sm-4 text-right" for="u_password"><span class="text-danger">*</span>密码：</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input class="form-control"  type="password" id="u_password" name="u_password" required="required">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 col-sm-4 text-right" for="u_type"><span class="text-danger">*</span>用户类型：</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select class="form-control" id="u_type" name="u_type" required="required">
+                            <option value=0>学生</option>
+                            <option value=1>管理员</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-6 text-right">
+                        <button id="btn_login" type="button" class="btn btn-success">登 录</button>
+                    </div>
+                    <div class="col-sm-6 text-left">
+                        <button type="button" class="btn btn-light"><a th:href="@{/register}">没有账号，去注册</a></button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
