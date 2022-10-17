@@ -518,4 +518,15 @@ public class AdminController {
         System.out.println("/admin/ListAdmitHtml success!");
         return "/admin/ListAdmit.html";
     }
+
+    @RequestMapping("/precautionHtml")
+    public String precautionHtml()
+    {
+        /*
+         * 查询学生详细信息界面
+         * */
+        System.out.println("/admin/precautionHtml success!");
+        return "/admin/precaution.html";
+    }
+
 }

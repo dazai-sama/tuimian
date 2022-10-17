@@ -16,7 +16,8 @@ public interface UserMapper {
 //    @Select("select * from user where name=")
 //    List<User> findByName();
 
-    @Update("insert into `user`(name,address,age,sex,phone) values(#{name},#{address},#{age},#{sex},#{phone})")
+    // 添加用户信息
+    @Update("insert into `user`(u_username,u_password,u_type) values(#{u_username},#{u_password},#{u_type})")
     @Transactional
     void save(User user);
 
@@ -134,5 +135,19 @@ public interface UserMapper {
     @Transactional
     void refuseAdmit(Application application);
 
+    // 验证用户名唯一性
+    @Select("select count(u_id) from `user` where u_username=#{u_username}")
+    int validateUsername(String u_username);
 
+    // 验证密码是否正确
+    @Select("select u_password from `user` where u_username=#{u_username} and u_type=#{u_type}")
+    String login(User user);
+
+    // 通过用户名找到用户id
+    @Select("select u_id from `user` where u_username=#{u_username}")
+    int findIdByName(User user);
+
+    // 通过用户id找到用户身份
+    @Select("select u_type from `user` where u_id=#{u_id}")
+    int findTypeById(int u_id);
 }

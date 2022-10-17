@@ -27,7 +27,12 @@
             <div class="menu_section">
                 <h3>管理员端</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-star"></i> 管理模块 <span class="fa fa-chevron-right"></span></a>
+                    <li><a><i class="fa fa-star"></i> 注意事项 <span class="fa fa-chevron-right"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a th:href="@{/admin/precautionHtml}">注意事项</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-pencil-square"></i> 管理模块 <span class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
                             <li><a th:href="@{/admin/listStuInfo}">志愿管理</a></li>
                             <li><a th:href="@{/admin/ListAdmitHtml}">录取名单</a></li>
