@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title text="新增家庭成员"></title>
+    <script type="text/javascript" data-main="/jscustom/student/addFamily.js" src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!--表单-新增成员-->
+    <form class="form-horizontal" id="form_addFamily" method="post" style="margin: 10px">
+        <br>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_name"><span class="text-danger">*</span>姓名：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_name" name="f_name" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_relation"><span class="text-danger">*</span>与本人关系：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_relation" name="f_relation" placeholder="如：父子、母子" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_work"><span class="text-danger">*</span>工作单位：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_work" name="f_work" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_phone"><span class="text-danger">*</span>电话号码：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="tel" id="f_phone" name="f_phone" placeholder="如：13812341234" required="required">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button id="btn_reset" type="reset" class="btn btn-primary">重 置</button>
+            </div>
+            <div class="col-sm-6 text-left">
+                <button id="btn_submitAddFamily" type="button" class="btn btn-success">提 交</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

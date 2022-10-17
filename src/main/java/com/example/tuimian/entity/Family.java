@@ -2,11 +2,13 @@ package com.example.tuimian.entity;
 
 public class Family
 {
+    private int u_id;
     private int f_id;
     private String f_name;
     private String f_relation;
     private String f_work;
     private String f_phone;
+
 
     public int getF_id() {
         return f_id;
@@ -46,5 +48,13 @@ public class Family
 
     public void setF_phone(String f_phone) {
         this.f_phone = f_phone;
+    }
+
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 }

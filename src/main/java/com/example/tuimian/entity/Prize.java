@@ -2,6 +2,7 @@ package com.example.tuimian.entity;
 
 public class Prize
 {
+    private int u_id;
     private int p_id;
     private String p_time;
     private String p_name;
@@ -37,5 +38,13 @@ public class Prize
 
     public void setP_level(String p_level) {
         this.p_level = p_level;
+    }
+
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 }

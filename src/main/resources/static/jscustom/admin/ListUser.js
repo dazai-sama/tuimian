@@ -316,8 +316,8 @@ require(
                                 },
                                 formatter:function (value, row, index){
                                     var result = "";
-                                    result += '<button id="edit" class="btn btn-info btn-sm btn-primary">修改</button>';
-                                    result += '<button id="lookup" class="btn btn-info btn-sm btn-dark" style="margin-left:10px;">查看</button>';
+                                    result += '<button id="edit" class="btn btn-info btn-sm btn-primary">修改志愿信息</button>';
+                                    result += '<button id="lookup" class="btn btn-info btn-sm btn-dark" style="margin-left:10px;">查看学生信息</button>';
                                     result += '<button id="checkpass" class="btn btn-info btn-sm btn-success" style="margin-left:10px;">审核通过，发复试通知</button>';
                                     result += '<button id="checkfail" class="btn btn-info btn-sm btn-danger" style="margin-left:10px;">审核不通过</button>';
                                     result += '<button id="retestpass" class="btn btn-info btn-sm btn-success" style="margin-left:10px;">复试通过，发拟录取通知</button>';
@@ -389,7 +389,7 @@ require(
                     });
                 }
 
-                // 修改志愿信息
+                // 查看学生信息
                 function lookupStudent(u_id,u_name,u_sex,u_idnumber,u_birthday,u_location,u_nationality,u_phone,u_email,u_school,u_major,u_grank,u_srank,u_politics,u_soldier) {
                     layer.open({
                         type:2,

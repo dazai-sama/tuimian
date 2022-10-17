@@ -32,10 +32,28 @@
             <li><a th:href="@{/student/precautionHtml}">注意事项</a></li>
           </ul>
         </li>
-        <li><a><i class="fa fa-star"></i> 个人信息 <span class="fa fa-chevron-right"></span></a>
+        <li><a><i class="fa fa-edit"></i> 个人信息 <span class="fa fa-chevron-right"></span></a>
           <ul class="nav child_menu">
-            <li><a th:href="@{/student/}">志愿管理</a></li>
-            <li><a th:href="@{/student/}">录取名单</a></li>
+            <li><a th:href="@{/student/baseInfoHtml}">基本信息</a></li>
+            <li><a th:href="@{/student/familyInfoHtml}">家庭成员</a></li>
+            <li><a th:href="@{/student/prizeInfoHtml}">竞赛获奖</a></li>
+            <li><a th:href="@{/student/researchInfoHtml}">科研经历</a></li>
+            <li><a th:href="@{/student/socialInfoHtml}">社会实践</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-desktop"></i> 志愿信息 <span class="fa fa-chevron-right"></span></a>
+          <ul class="nav child_menu">
+            <li><a th:href="@{/student/applicationInfoHtml}">志愿信息</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-table"></i> 复试信息 <span class="fa fa-chevron-right"></span></a>
+          <ul class="nav child_menu">
+            <li><a th:href="@{/student/retestInfoHtml}">复试信息</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-clone"></i> 拟录取信息 <span class="fa fa-chevron-right"></span></a>
+          <ul class="nav child_menu">
+            <li><a th:href="@{/student/admitInfoHtml}">拟录取信息</a></li>
           </ul>
         </li>
       </ul>

@@ -80,7 +80,7 @@ public class AdminController {
 
         int offset = pageNum * pageSize;
         List<Social> userData = userMapper.findByPageSocial(offset,pageSize,u_id);
-        int total = userMapper.countSocial();
+        int total = userMapper.countSocial(u_id);
 
         // rows和total这两个属性时为前端bootstrap-table服务的
         JSONObject result=new JSONObject();
@@ -117,7 +117,7 @@ public class AdminController {
 
         int offset = pageNum * pageSize;
         List<Research> userData = userMapper.findByPageResearch(offset,pageSize,u_id);
-        int total = userMapper.countResearch();
+        int total = userMapper.countResearch(u_id);
 
         // rows和total这两个属性时为前端bootstrap-table服务的
         JSONObject result=new JSONObject();
@@ -154,7 +154,7 @@ public class AdminController {
 
         int offset = pageNum * pageSize;
         List<Prize> userData = userMapper.findByPagePrize(offset,pageSize,u_id);
-        int total = userMapper.countPrize();
+        int total = userMapper.countPrize(u_id);
 
         // rows和total这两个属性时为前端bootstrap-table服务的
         JSONObject result=new JSONObject();
@@ -188,7 +188,7 @@ public class AdminController {
 
         int offset = pageNum * pageSize;
         List<Family> userData = userMapper.findByPageFamily(offset,pageSize,u_id);
-        int total = userMapper.countFamily();
+        int total = userMapper.countFamily(u_id);
 
         // rows和total这两个属性时为前端bootstrap-table服务的
         JSONObject result=new JSONObject();

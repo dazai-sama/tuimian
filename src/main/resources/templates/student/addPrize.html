@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title text="新增奖项"></title>
+    <script type="text/javascript" data-main="/jscustom/student/addPrize.js" src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!--表单-新增奖项-->
+    <form class="form-horizontal" id="form_addPrize" method="post" style="margin: 10px">
+        <br>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="p_time"><span class="text-danger">*</span>获奖时间：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="p_time" name="p_time" placeholder="格式为：yyyy-mm-dd" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="p_name"><span class="text-danger">*</span>奖项名称：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="p_name" name="p_name" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="p_level"><span class="text-danger">*</span>性别：</label>
+            <div class="col-md-9 col-sm-9">
+                <select class="form-control" id="p_level" name="p_level" required="required">
+                    <option value="国际级">国际级</option>
+                    <option value="国家级">国家级</option>
+                    <option value="省级">省级</option>
+                    <option value="市级">市级</option>
+                    <option value="校级">校级</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button id="btn_reset" type="reset" class="btn btn-primary">重 置</button>
+            </div>
+            <div class="col-sm-6 text-left">
+                <button id="btn_submitAddPrize" type="button" class="btn btn-success">提 交</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

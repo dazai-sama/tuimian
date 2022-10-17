@@ -2,6 +2,7 @@ package com.example.tuimian.entity;
 
 public class Research
 {
+    private int u_id;
     private int r_id;
     private String r_start;
     private String r_end;
@@ -37,5 +38,13 @@ public class Research
 
     public void setR_content(String r_content) {
         this.r_content = r_content;
+    }
+
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 }

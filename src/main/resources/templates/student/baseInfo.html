@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title text="个人基本信息"></title>
+    <script type="text/javascript" data-main="/jscustom/student/baseInfo.js" src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a th:href="@{/student/precautionHtml}" class="site_title"><span>研究生推免系统</span></a>
+                </div>
+                <div class="clearfix"></div>
+                <div th:include="common_stu::commonNav"></div>
+            </div>
+        </div>
+        <div th:include="common_stu::commonTop"></div>
+
+        <!-- 这里放我们的内容 -->
+        <div class="right_col" role="main">
+            <div class="clearfix"></div>
+            <h1><strong>个人基本信息</strong></h1>
+            <div class="col-md-10">
+                <form class="form-horizontal" id="form_baseInfo" method="post" style="margin: 5px">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_name"><span class="text-danger">*</span>姓名：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_name" name="u_name" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_sex"><span class="text-danger">*</span>性别：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <select class="form-control" id="u_sex" name="u_sex" required="required">
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_nationality"><span class="text-danger">*</span>民族：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_nationality" name="u_nationality" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_politics"><span class="text-danger">*</span>政治面貌：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <select class="form-control" id="u_politics" name="u_politics" required="required">
+                                <option value="中共党员">中共党员</option>
+                                <option value="中共预备党员">中共预备党员</option>
+                                <option value="共青团员">共青团员</option>
+                                <option value="群众">群众</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_soldier"><span class="text-danger">*</span>现役军人：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <select class="form-control" id="u_soldier" name="u_soldier" required="required">
+                                <option value="军人">军人</option>
+                                <option value="非军人">非军人</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_idnumber"><span class="text-danger">*</span>身份证号：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_idnumber" name="u_idnumber" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_birthday"><span class="text-danger">*</span>出生日期：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_birthday" name="u_birthday" placeholder="格式为：xxxx-mm-dd" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_phone"><span class="text-danger">*</span>手机号：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_phone" name="u_phone" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_email"><span class="text-danger">*</span>邮箱：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control" type="email" id="u_email" name="u_email" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_location"><span class="text-danger">*</span>居住地：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_location" name="u_location" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_school"><span class="text-danger">*</span>本科学校：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_school" name="u_school" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_major"><span class="text-danger">*</span>本科专业：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="text" id="u_major" name="u_major" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_grank"><span class="text-danger">*</span>成绩排名：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="digits" id="u_grank" name="u_grank" placeholder="小数形式，格式为：0.xx" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-sm-3 text-right" for="u_srank"><span class="text-danger">*</span>综合排名：</label>
+                        <div class="col-md-9 col-sm-9">
+                            <input class="form-control"  type="digits" id="u_srank" name="u_srank" placeholder="小数形式，格式为：0.xx" required="required">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 text-right">
+                            <button id="btn_baseSubmit" type="button" class="btn btn-success">提 交</button>
+                        </div>
+                        <div class="col-sm-6 text-left">
+                            <button id="btn_nextFamily" type="button" class="btn btn-primary">下一步</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- /这里放我们的内容-->
+
+    </div>
+</div>
+</body>
+</html>

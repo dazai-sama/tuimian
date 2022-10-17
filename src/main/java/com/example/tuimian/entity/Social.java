@@ -2,6 +2,7 @@ package com.example.tuimian.entity;
 
 public class Social
 {
+    private int u_id;
     private int s_id;
     private String s_start;
     private String s_end;
@@ -37,5 +38,13 @@ public class Social
 
     public void setS_content(String s_content) {
         this.s_content = s_content;
+    }
+
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 }

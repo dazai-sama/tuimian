@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title text="修改社会实践"></title>
+    <script type="text/javascript" data-main="/jscustom/student/modifySocial.js" src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" id="form_modifySocial" method="post" style="margin: 10px">
+        <br>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="s_id">社会实践id：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="s_id" name="s_id" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="s_start"><span class="text-danger">*</span>开始时间：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="s_start" name="s_start" placeholder="格式为：yyyy-mm-dd" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="s_end"><span class="text-danger">*</span>结束时间：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="s_end" name="s_end" placeholder="格式为：yyyy-mm-dd" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="s_content"><span class="text-danger">*</span>具体内容：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="s_content" name="s_content" required="required">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="reset" class="btn btn-primary">重 置</button>
+            </div>
+            <div class="col-sm-6 text-left">
+                <button id="btn_submitModifySocial" type="button" class="btn btn-success">修 改</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

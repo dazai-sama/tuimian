@@ -94,13 +94,17 @@ public class LoginController {
             int u_id=userMapper.findIdByName(user);
             int u_type=userMapper.findTypeById(u_id);
             user.setU_id(u_id);
-            session.setAttribute("user",user);
             if(u_type==0){
+                session.setAttribute("student",user);
+                session.setMaxInactiveInterval(100*60);
                 return 0; // 学生用户 用户名存在 密码正确
             }
             else{
+                session.setAttribute("admin",user);
+                session.setMaxInactiveInterval(100*60);
                 return 1; // 管理员用户 用户名存在 密码正确
             }
+
         }
         else if(num==0){
             return 2; // 用户未注册

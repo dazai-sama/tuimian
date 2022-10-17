@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title text="修改家庭成员信息"></title>
+    <script type="text/javascript" data-main="/jscustom/student/modifyFamily.js" src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" id="form_modifyFamily" method="post" style="margin: 10px">
+        <br>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_id">家庭成员id：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_id" name="f_id" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_name"><span class="text-danger">*</span>姓名：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_name" name="f_name" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_relation"><span class="text-danger">*</span>与本人关系：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_relation" name="f_relation" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_work"><span class="text-danger">*</span>工作单位：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_work" name="f_work" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-sm-3 text-right" for="f_phone"><span class="text-danger">*</span>手机号：</label>
+            <div class="col-md-9 col-sm-9">
+                <input class="form-control"  type="text" id="f_phone" name="f_phone" required="required">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="reset" class="btn btn-primary">重 置</button>
+            </div>
+            <div class="col-sm-6 text-left">
+                <button id="btn_submitModifyFamily" type="button" class="btn btn-success">修 改</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
