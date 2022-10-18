@@ -77,6 +77,20 @@ public interface UserMapper {
     @Select("select count(a_id) from application where application.u_id=#{u_id}")
     int countApplicationById(int u_id);
 
+    // retest
+    @Select("select * from application where application.u_id=#{u_id} and a_check=1 limit #{offset},#{pageSize}")
+    List<Application> findByPageRetest(int offset, int pageSize, int u_id);
+
+    @Select("select count(a_id) from application where application.u_id=#{u_id}")
+    int countRetestById(int u_id);
+
+    // admit
+    @Select("select * from application where application.u_id=#{u_id} and a_retest=1 limit #{offset},#{pageSize}")
+    List<Application> findPageAdmit(int offset, int pageSize, int u_id);
+
+    @Select("select count(a_id) from application where application.u_id=#{u_id}")
+    int countAdmitById(int u_id);
+
 
     // 审核通过，发复试通知
     @Select("select a_submit from application where a_id=#{a_id}")
@@ -251,4 +265,8 @@ public interface UserMapper {
     @Delete("delete from application where a_id=#{a_id}")
     @Transactional
     void deleteApplication(int a_id);
+
+    // 限制填报志愿个数
+    @Select("select count(a_id) from application where u_id=#{u_id}")
+    int checkCountApplication(Application application);
 }

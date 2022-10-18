@@ -219,7 +219,7 @@ require(
                                 title: '审核状态',
                                 formatter: function indexFormatter(value, row, index)
                                 {
-                                    if(value == 1) {newvalue = '<span class="badge badge-success">审核通过，请选择是否接受复试通知</span>';}
+                                    if(value == 1) {newvalue = '<span class="badge badge-success">审核通过，已发送复试通知</span>';}
                                     else if(value == 0){newvalue = '<span class="badge badge-warning">审核不通过</span>';}
                                     else {newvalue = '<span class="badge badge-secondary">未审核</span>';}
                                     return newvalue;
@@ -241,7 +241,7 @@ require(
                                 title: '复试状态',
                                 formatter: function indexFormatter(value, row, index)
                                 {
-                                    if(value == 1) {newvalue = '<span class="badge badge-success">复试通过，请选择是否接受拟录取通知</span>';}
+                                    if(value == 1) {newvalue = '<span class="badge badge-success">复试通过，已发送拟录取通知</span>';}
                                     else if(value == 0){newvalue = '<span class="badge badge-warning">复试不通过</span>';}
                                     else {newvalue = '<span class="badge badge-secondary">未进行复试</span>';}
                                     return newvalue;
@@ -273,7 +273,6 @@ require(
                             {
                                 field: '',
                                 title: '管理员操作',
-                                width: 1000,
                                 events: {
                                     'click #edit': function (e, value, row, index) {
                                         editInfo(row.a_id,row.u_id,row.u_name,row.a_level,row.a_major,row.a_studytype,row.a_direction,row.a_tutor,row.a_orient);
@@ -297,21 +296,21 @@ require(
                                     /*
                                     * 学生端操作 在此测试
                                     * */
-                                    'click #submitreview': function (e, value, row, index) {
-                                        submitReview(row.a_id);
-                                    },
-                                    'click #acretest': function (e, value, row, index) {
-                                        acceptRetest(row.a_id);
-                                    },
-                                    'click #reretest': function (e, value, row, index) {
-                                        refuseRetest(row.a_id);
-                                    },
-                                    'click #acadmit': function (e, value, row, index) {
-                                        acceptAdmit(row.a_id,row.u_id);
-                                    },
-                                    'click #readmit': function (e, value, row, index) {
-                                        refuseAdmit(row.a_id);
-                                    },
+                                    // 'click #submitreview': function (e, value, row, index) {
+                                    //     submitReview(row.a_id);
+                                    // },
+                                    // 'click #acretest': function (e, value, row, index) {
+                                    //     acceptRetest(row.a_id);
+                                    // },
+                                    // 'click #reretest': function (e, value, row, index) {
+                                    //     refuseRetest(row.a_id);
+                                    // },
+                                    // 'click #acadmit': function (e, value, row, index) {
+                                    //     acceptAdmit(row.a_id,row.u_id);
+                                    // },
+                                    // 'click #readmit': function (e, value, row, index) {
+                                    //     refuseAdmit(row.a_id);
+                                    // },
 
                                 },
                                 formatter:function (value, row, index){
@@ -326,11 +325,11 @@ require(
                                     /*
                                     * 学生端操作 在此测试
                                     * */
-                                    result += '<button id="submitreview" class="btn btn-info btn-sm btn-primary" style="margin-left:30px;">提交申请</button>';
-                                    result += '<button id="acretest" class="btn btn-info btn-sm btn-success" style="margin-left:10px;">接受复试</button>';
-                                    result += '<button id="reretest" class="btn btn-info btn-sm btn-danger" style="margin-left:10px;">拒绝复试</button>';
-                                    result += '<button id="acadmit" class="btn btn-info btn-sm btn-success" style="margin-left:10px;">接受拟录取</button>';
-                                    result += '<button id="readmit" class="btn btn-info btn-sm btn-danger" style="margin-left:10px;">拒绝拟录取</button>';
+                                    // result += '<button id="submitreview" class="btn btn-info btn-sm btn-primary" style="margin-left:30px;">提交申请</button>';
+                                    // result += '<button id="acretest" class="btn btn-info btn-sm btn-success" style="margin-left:10px;">接受复试</button>';
+                                    // result += '<button id="reretest" class="btn btn-info btn-sm btn-danger" style="margin-left:10px;">拒绝复试</button>';
+                                    // result += '<button id="acadmit" class="btn btn-info btn-sm btn-success" style="margin-left:10px;">接受拟录取</button>';
+                                    // result += '<button id="readmit" class="btn btn-info btn-sm btn-danger" style="margin-left:10px;">拒绝拟录取</button>';
                                     return result;
                                 }
                             },
@@ -541,146 +540,146 @@ require(
                 * 学生端操作 在此测试
                 * */
 
-                // 提交申请
-                function submitReview(a_id) {
-                    var r = confirm("请确认提交");
-                    if (r == true) {
-                        $.ajax({
-                            type: 'post',
-                            url: '/admin/submitReview',
-                            dataType: 'json',
-                            data: {
-                                a_id: a_id
-                            },
-                            success: function (data) { // boolean
-                                if(data)
-                                {
-                                    alert('操作成功');
-                                    $('#tb_stu').bootstrapTable('refresh');
-                                }
-                                else{
-                                    alert('操作失败，必填项未填写');
-                                }
-                            }
-                        })
-                    }
-                }
-
-                // 接受复试
-                function acceptRetest(a_id) {
-                    var r = confirm("请确认提交");
-                    if (r == true) {
-                        $.ajax({
-                            type: 'post',
-                            url: '/admin/acceptRetest',
-                            dataType: 'json',
-                            data: {
-                                a_id: a_id
-                            },
-                            success: function (data) { // int
-                                if(data==1)
-                                {
-                                    alert('操作成功');
-                                    $('#tb_stu').bootstrapTable('refresh');
-                                }
-                                else if(data==2){
-                                    alert('操作失败，未收到复试通知');
-                                }
-                                else {
-                                    alert('操作失败，已进行过选择');
-                                }
-                            }
-                        })
-                    }
-                }
-
-                // 拒绝复试
-                function refuseRetest(a_id) {
-                    var r = confirm("请确认提交");
-                    if (r == true) {
-                        $.ajax({
-                            type: 'post',
-                            url: '/admin/refuseRetest',
-                            dataType: 'json',
-                            data: {
-                                a_id: a_id
-                            },
-                            success: function (data) { // int
-                                if(data==1)
-                                {
-                                    alert('操作成功');
-                                    $('#tb_stu').bootstrapTable('refresh');
-                                }
-                                else if(data==2){
-                                    alert('操作失败，未收到复试通知');
-                                }
-                                else {
-                                    alert('操作失败，已进行过选择');
-                                }
-                            }
-                        })
-                    }
-                }
-
-                // 接受拟录取
-                function acceptAdmit(a_id,u_id) {
-                    var r = confirm("请确认提交");
-                    if (r == true) {
-                        $.ajax({
-                            type: 'post',
-                            url: '/admin/acceptAdmit',
-                            dataType: 'json',
-                            data: {
-                                a_id: a_id,
-                                u_id: u_id
-                            },
-                            success: function (data) { // int
-                                if(data==1)
-                                {
-                                    alert('操作成功');
-                                    $('#tb_stu').bootstrapTable('refresh');
-                                }
-                                else if(data==2){
-                                    alert('操作失败，未收到拟录取通知');
-                                }
-                                else if(data==3){
-                                    alert('操作失败，已进行过选择');
-                                }
-                                else{
-                                    alert('操作失败，你已经被其他志愿录取');
-                                }
-                            }
-                        })
-                    }
-                }
-
-                // 拒绝拟录取
-                function refuseAdmit(a_id) {
-                    var r = confirm("请确认提交");
-                    if (r == true) {
-                        $.ajax({
-                            type: 'post',
-                            url: '/admin/refuseAdmit',
-                            dataType: 'json',
-                            data: {
-                                a_id: a_id
-                            },
-                            success: function (data) { // int
-                                if(data==1)
-                                {
-                                    alert('操作成功');
-                                    $('#tb_stu').bootstrapTable('refresh');
-                                }
-                                else if(data==2){
-                                    alert('操作失败，未收到拟录取通知');
-                                }
-                                else{
-                                    alert('操作失败，已进行过选择');
-                                }
-                            }
-                        })
-                    }
-                }
+                // // 提交申请
+                // function submitReview(a_id) {
+                //     var r = confirm("请确认提交");
+                //     if (r == true) {
+                //         $.ajax({
+                //             type: 'post',
+                //             url: '/admin/submitReview',
+                //             dataType: 'json',
+                //             data: {
+                //                 a_id: a_id
+                //             },
+                //             success: function (data) { // boolean
+                //                 if(data)
+                //                 {
+                //                     alert('操作成功');
+                //                     $('#tb_stu').bootstrapTable('refresh');
+                //                 }
+                //                 else{
+                //                     alert('操作失败，必填项未填写');
+                //                 }
+                //             }
+                //         })
+                //     }
+                // }
+                //
+                // // 接受复试
+                // function acceptRetest(a_id) {
+                //     var r = confirm("请确认提交");
+                //     if (r == true) {
+                //         $.ajax({
+                //             type: 'post',
+                //             url: '/admin/acceptRetest',
+                //             dataType: 'json',
+                //             data: {
+                //                 a_id: a_id
+                //             },
+                //             success: function (data) { // int
+                //                 if(data==1)
+                //                 {
+                //                     alert('操作成功');
+                //                     $('#tb_stu').bootstrapTable('refresh');
+                //                 }
+                //                 else if(data==2){
+                //                     alert('操作失败，未收到复试通知');
+                //                 }
+                //                 else {
+                //                     alert('操作失败，已进行过选择');
+                //                 }
+                //             }
+                //         })
+                //     }
+                // }
+                //
+                // // 拒绝复试
+                // function refuseRetest(a_id) {
+                //     var r = confirm("请确认提交");
+                //     if (r == true) {
+                //         $.ajax({
+                //             type: 'post',
+                //             url: '/admin/refuseRetest',
+                //             dataType: 'json',
+                //             data: {
+                //                 a_id: a_id
+                //             },
+                //             success: function (data) { // int
+                //                 if(data==1)
+                //                 {
+                //                     alert('操作成功');
+                //                     $('#tb_stu').bootstrapTable('refresh');
+                //                 }
+                //                 else if(data==2){
+                //                     alert('操作失败，未收到复试通知');
+                //                 }
+                //                 else {
+                //                     alert('操作失败，已进行过选择');
+                //                 }
+                //             }
+                //         })
+                //     }
+                // }
+                //
+                // // 接受拟录取
+                // function acceptAdmit(a_id,u_id) {
+                //     var r = confirm("请确认提交");
+                //     if (r == true) {
+                //         $.ajax({
+                //             type: 'post',
+                //             url: '/admin/acceptAdmit',
+                //             dataType: 'json',
+                //             data: {
+                //                 a_id: a_id,
+                //                 u_id: u_id
+                //             },
+                //             success: function (data) { // int
+                //                 if(data==1)
+                //                 {
+                //                     alert('操作成功');
+                //                     $('#tb_stu').bootstrapTable('refresh');
+                //                 }
+                //                 else if(data==2){
+                //                     alert('操作失败，未收到拟录取通知');
+                //                 }
+                //                 else if(data==3){
+                //                     alert('操作失败，已进行过选择');
+                //                 }
+                //                 else{
+                //                     alert('操作失败，你已经被其他志愿录取');
+                //                 }
+                //             }
+                //         })
+                //     }
+                // }
+                //
+                // // 拒绝拟录取
+                // function refuseAdmit(a_id) {
+                //     var r = confirm("请确认提交");
+                //     if (r == true) {
+                //         $.ajax({
+                //             type: 'post',
+                //             url: '/admin/refuseAdmit',
+                //             dataType: 'json',
+                //             data: {
+                //                 a_id: a_id
+                //             },
+                //             success: function (data) { // int
+                //                 if(data==1)
+                //                 {
+                //                     alert('操作成功');
+                //                     $('#tb_stu').bootstrapTable('refresh');
+                //                 }
+                //                 else if(data==2){
+                //                     alert('操作失败，未收到拟录取通知');
+                //                 }
+                //                 else{
+                //                     alert('操作失败，已进行过选择');
+                //                 }
+                //             }
+                //         })
+                //     }
+                // }
 
 
                 // 删除信息

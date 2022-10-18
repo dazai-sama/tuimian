@@ -381,6 +381,60 @@ public class StudentController {
         return result.toJSONString(); // 返回json样式的字符串
     }
 
+    @RequestMapping("/findPageRetest")
+    @ResponseBody
+    public String findPageRetest(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
+    {
+        System.out.println("/student/findPageRetest success!");
+        User user = (User) session.getAttribute("student");
+        int pageNum=0;
+        int pageSize=10;
+
+        if(reqMap!=null)
+        {
+            if(reqMap.get("pageNum").toString()!=null) {pageNum=Integer.parseInt(reqMap.get("pageNum").toString());}
+            if(reqMap.get("pageSize").toString()!=null) {pageSize=Integer.parseInt(reqMap.get("pageSize").toString());}
+        }
+
+        int offset = pageNum * pageSize;
+        List<Application> userData = userMapper.findByPageRetest(offset, pageSize, user.getU_id());
+        int total = userMapper.countRetestById(user.getU_id());
+
+        // rows和total这两个属性时为前端bootstrap-table服务的
+        JSONObject result=new JSONObject();
+        result.put("rows", userData);
+        result.put("total",total);
+        return result.toJSONString(); // 返回json样式的字符串
+    }
+
+    @RequestMapping("/findPageAdmit")
+    @ResponseBody
+    public String findPageAdmit(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
+    {
+        System.out.println("/student/findPageAdmit success!");
+        User user = (User) session.getAttribute("student");
+        int pageNum=0;
+        int pageSize=10;
+
+        if(reqMap!=null)
+        {
+            if(reqMap.get("pageNum").toString()!=null) {pageNum=Integer.parseInt(reqMap.get("pageNum").toString());}
+            if(reqMap.get("pageSize").toString()!=null) {pageSize=Integer.parseInt(reqMap.get("pageSize").toString());}
+        }
+
+        int offset = pageNum * pageSize;
+        List<Application> userData = userMapper.findPageAdmit(offset, pageSize, user.getU_id());
+        int total = userMapper.countAdmitById(user.getU_id());
+
+        // rows和total这两个属性时为前端bootstrap-table服务的
+        JSONObject result=new JSONObject();
+        result.put("rows", userData);
+        result.put("total",total);
+        return result.toJSONString(); // 返回json样式的字符串
+    }
+
+
+
     @RequestMapping("/addFamily")
     @ResponseBody
     public int addFamily(Family family,HttpSession session)
@@ -519,8 +573,14 @@ public class StudentController {
         System.out.println("/student/addApplication success!");
         User user = (User) session.getAttribute("student");
         application.setU_id(user.getU_id());
-        userMapper.addApplication(application);
-        return 1;
+        int tmp=userMapper.checkCountApplication(application);
+        if(tmp<3){
+            userMapper.addApplication(application);
+            return 1;
+        }else{
+            return 2;
+        }
+
     }
 
     @RequestMapping("/modifyApplication")
@@ -530,8 +590,13 @@ public class StudentController {
         System.out.println("/student/modifyApplication success!");
         User user = (User) session.getAttribute("student");
         application.setU_id(user.getU_id());
-        userMapper.modifyApplication(application);
-        return 1;
+        int tmp=userMapper.checkSubmit2(application.getA_id());
+        if(tmp==0){
+            userMapper.modifyApplication(application);
+            return 1;
+        }else{
+            return 2;
+        }
     }
 
     @RequestMapping("/deleteApplication")
@@ -565,5 +630,96 @@ public class StudentController {
         }
     }
 
+    @RequestMapping("/acceptRetest")
+    @ResponseBody
+    public int acceptRetest(Application application)
+    {
+        /*
+         * 接受复试
+         * */
+        System.out.println("/student/acceptRetest success!");
+        int tmp1=userMapper.checkCheckPass(application);
+        int tmp2=userMapper.checkRetest(application);
+        if(tmp1==1 && tmp2==-1){
+            userMapper.acceptRetest(application);
+            return 1;
+        }
+        else if(tmp1!=1){
+            return 2;
+        }
+        else {
+            return 3;
+        }
+    }
+
+    @RequestMapping("/refuseRetest")
+    @ResponseBody
+    public int refuseRetest(Application application)
+    {
+        /*
+         * 拒绝复试
+         * */
+        System.out.println("/student/refuseRetest success!");
+        int tmp1=userMapper.checkCheckPass(application);
+        int tmp2=userMapper.checkRetest(application);
+        if(tmp1==1 && tmp2==-1){
+            userMapper.refuseRetest(application);
+            return 1;
+        }
+        else if(tmp1!=1){
+            return 2;
+        }
+        else {
+            return 3;
+        }
+    }
+
+    @RequestMapping("/acceptAdmit")
+    @ResponseBody
+    public int acceptAdmit(Application application)
+    {
+        /*
+         * 接受拟录取
+         * */
+        System.out.println("/student/acceptAdmit success!");
+        int tmp1=userMapper.checkRetestPass(application);
+        int tmp2=userMapper.checkAdmitAccept(application);
+        int tmp3=userMapper.checkOneApplication(application);
+        if(tmp1==1 && tmp2==-1 && tmp3==0){ // 收到通知 没进行过选择 没被其他志愿录取
+            userMapper.acceptAdmit(application);
+            return 1;
+        }
+        else if(tmp1!=1){ // 没收到通知
+            return 2;
+        }
+        else if(tmp2!=-1){ // 进行过选择
+            return 3;
+        }
+        else{
+            return 4; // 已经被其他志愿录取
+        }
+    }
+
+    @RequestMapping("/refuseAdmit")
+    @ResponseBody
+    public int refuseAdmit(Application application)
+    {
+        /*
+         * 拒绝拟录取
+         * */
+        System.out.println("/student/refuseAdmit success!");
+        int tmp1=userMapper.checkRetestPass(application);
+        int tmp2=userMapper.checkAdmitAccept(application);
+        if(tmp1==1 && tmp2==-1){
+            userMapper.refuseAdmit(application);
+            return 1;
+        }
+        else if(tmp1!=1){
+            return 2;
+        }
+        else {
+            return 3;
+        }
+    }
 
 }
