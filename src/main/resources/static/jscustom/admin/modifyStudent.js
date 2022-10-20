@@ -43,10 +43,16 @@ require(
                     if (bootstrapValidator.isValid()) // 全部验证通过，才能提交表单
                     {
                         var options = {
-                            complete: function (data) { // 提交完成执行的操作
-                                alert("志愿信息修改成功");
+                            success: function (data) { // 提交完成执行的操作
+                                if(data==1){
+                                    alert("志愿信息修改成功");
+                                }
+                                else{
+                                    alert("修改失败，该志愿已审核，无法更改");
+                                }
                                 var mylay = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(mylay); // 关闭当前窗口页
+
                             },
                             url: '/admin/modifyApplication',
                             dataType: 'json',

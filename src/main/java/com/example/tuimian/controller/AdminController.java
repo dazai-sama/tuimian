@@ -243,13 +243,19 @@ public class AdminController {
 
     @RequestMapping("/modifyApplication")
     @ResponseBody
-    public void modifyApplication(Application application)
+    public int modifyApplication(Application application)
     {
         /*
         * 修改志愿信息
         * */
         System.out.println("/admin/modify success!");
-        userMapper.updateById(application);
+        int tmp1=userMapper.checkCheckPass(application);
+        if(tmp1==-1){
+            userMapper.updateById(application);
+            return 1;
+        }else{
+            return 2;
+        }
     }
 
     @RequestMapping("/checkPass")

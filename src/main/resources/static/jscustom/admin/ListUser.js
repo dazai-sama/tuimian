@@ -11,7 +11,6 @@ require(
                 $('#tb_stu').bootstrapTable({
                         url: '/admin/findPageStuInfo',           // 请求后台url
                         method: 'post',             // 请求方式
-                        //striped: true,              // 是否显示行间隔色
                         class:"table table-bordered table-hover", // 启用bootstrap的表格样式
                         theadClasses:"thead-light", // 表头背景色
                         cache: false,               // 是否使用缓存

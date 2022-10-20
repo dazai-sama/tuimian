@@ -269,4 +269,6 @@ public interface UserMapper {
     // 限制填报志愿个数
     @Select("select count(a_id) from application where u_id=#{u_id}")
     int checkCountApplication(Application application);
+
+
 }
