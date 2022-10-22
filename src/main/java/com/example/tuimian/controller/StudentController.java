@@ -27,7 +27,7 @@ public class StudentController {
         /*
          * 学生注意事项界面
          * */
-        System.out.println("/student/precautionHtml success!");
+        System.out.println("/student/precautionHtml");
         return "/student/precaution.html";
     }
 
@@ -37,7 +37,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/baseInfoHtml success!");
+        System.out.println("/student/baseInfoHtml");
         return "/student/baseInfo.html";
     }
 
@@ -47,7 +47,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/familyInfoHtml success!");
+        System.out.println("/student/familyInfoHtml");
         return "/student/familyInfo.html";
     }
 
@@ -57,7 +57,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/prizeInfoHtml success!");
+        System.out.println("/student/prizeInfoHtml");
         return "/student/prizeInfo.html";
     }
 
@@ -67,7 +67,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/researchInfoHtml success!");
+        System.out.println("/student/researchInfoHtml");
         return "/student/researchInfo.html";
     }
 
@@ -77,7 +77,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/socialInfoHtml success!");
+        System.out.println("/student/socialInfoHtml");
         return "/student/socialInfo.html";
     }
 
@@ -87,7 +87,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/applicationInfoHtml success!");
+        System.out.println("/student/applicationInfoHtml");
         return "/student/applicationInfo.html";
     }
 
@@ -97,7 +97,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/retestInfoHtml success!");
+        System.out.println("/student/retestInfoHtml");
         return "/student/retestInfo.html";
     }
 
@@ -107,7 +107,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/admitInfoHtml success!");
+        System.out.println("/student/admitInfoHtml");
         return "/student/admitInfo.html";
     }
 
@@ -117,7 +117,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/addFamilyHtml success!");
+        System.out.println("/student/addFamilyHtml");
         return "/student/addFamily.html";
     }
 
@@ -127,7 +127,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/addPrizeHtml success!");
+        System.out.println("/student/addPrizeHtml");
         return "/student/addPrize.html";
     }
 
@@ -137,7 +137,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/addResearchHtml success!");
+        System.out.println("/student/addResearchHtml");
         return "/student/addResearch.html";
     }
 
@@ -147,7 +147,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/addSocialHtml success!");
+        System.out.println("/student/addSocialHtml");
         return "/student/addSocial.html";
     }
 
@@ -158,7 +158,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/modifyFamilyHtml success!");
+        System.out.println("/student/modifyFamilyHtml");
         return "/student/modifyFamily.html";
     }
 
@@ -168,7 +168,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/modifyPrizeHtml success!");
+        System.out.println("/student/modifyPrizeHtml");
         return "/student/modifyPrize.html";
     }
 
@@ -178,7 +178,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/modifyResearchHtml success!");
+        System.out.println("/student/modifyResearchHtml");
         return "/student/modifyResearch.html";
     }
 
@@ -188,7 +188,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/modifySocialHtml success!");
+        System.out.println("/student/modifySocialHtml");
         return "/student/modifySocial.html";
     }
 
@@ -198,7 +198,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/modifyApplicationHtml success!");
+        System.out.println("/student/modifyApplicationHtml");
         return "/student/modifyApplication.html";
     }
 
@@ -208,7 +208,7 @@ public class StudentController {
         /*
          * 学生个人基本信息填写界面
          * */
-        System.out.println("/student/addApplicationHtml success!");
+        System.out.println("/student/addApplicationHtml");
         return "/student/addApplication.html";
     }
 
@@ -224,14 +224,11 @@ public class StudentController {
         /*
          * 学生个人基本信息数据
          * */
-        System.out.println("/student/findBaseInfo success!");
+        System.out.println("/student/findBaseInfo");
         User user = (User) session.getAttribute("student");
         User userData=userMapper.findBaseInfo(user.getU_id());
         return userData;
-//        System.out.println("u_id:"+userData.getU_id());
-//        System.out.println("u_politics:"+userData.getU_politics());
-//        System.out.println("u_soldier:"+userData.getU_soldier());
-//        System.out.println("u_school:"+userData.getU_school());
+
     }
 
 
@@ -243,9 +240,10 @@ public class StudentController {
         /*
          * 学生个人基本信息数据
          * */
-        System.out.println("/student/baseInfoSubmit success!");
+        System.out.println("/student/baseInfoSubmit");
         User tmp = (User) session.getAttribute("student");
         user.setU_id(tmp.getU_id());
+//        System.out.println("name:"+user.getU_name());
         userMapper.saveBaseInfo(user);
         return 1;
     }
@@ -255,7 +253,7 @@ public class StudentController {
     @ResponseBody
     public String findPageFamily(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPageFamily success!");
+        System.out.println("/student/findPageFamily");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -281,7 +279,7 @@ public class StudentController {
     @ResponseBody
     public String findPagePrize(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPagePrize success!");
+        System.out.println("/student/findPagePrize");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -307,7 +305,7 @@ public class StudentController {
     @ResponseBody
     public String findPageResearch(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPageResearch success!");
+        System.out.println("/student/findPageResearch");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -333,7 +331,7 @@ public class StudentController {
     @ResponseBody
     public String findPageSocial(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPageSocial success!");
+        System.out.println("/student/findPageSocial");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -359,7 +357,7 @@ public class StudentController {
     @ResponseBody
     public String findPageApplication(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPageApplication success!");
+        System.out.println("/student/findPageApplication");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -385,7 +383,7 @@ public class StudentController {
     @ResponseBody
     public String findPageRetest(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPageRetest success!");
+        System.out.println("/student/findPageRetest");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -411,7 +409,7 @@ public class StudentController {
     @ResponseBody
     public String findPageAdmit(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
-        System.out.println("/student/findPageAdmit success!");
+        System.out.println("/student/findPageAdmit");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
         int pageSize=10;
@@ -439,7 +437,7 @@ public class StudentController {
     @ResponseBody
     public int addFamily(Family family,HttpSession session)
     {
-        System.out.println("/student/addFamily success!");
+        System.out.println("/student/addFamily");
         User user = (User) session.getAttribute("student");
         family.setU_id(user.getU_id());
         userMapper.addFamily(family);
@@ -450,7 +448,7 @@ public class StudentController {
     @ResponseBody
     public int modifyFamily(Family family,HttpSession session)
     {
-        System.out.println("/student/modifyFamily success!");
+        System.out.println("/student/modifyFamily");
         User user = (User) session.getAttribute("student");
         family.setU_id(user.getU_id());
         userMapper.modifyFamily(family);
@@ -461,7 +459,7 @@ public class StudentController {
     @ResponseBody
     public int deleteFamily(@RequestParam int f_id)
     {
-        System.out.println("/student/deleteFamily success!");
+        System.out.println("/student/deleteFamily");
         userMapper.deleteFamily(f_id);
         return 1;
     }
@@ -472,7 +470,7 @@ public class StudentController {
     @ResponseBody
     public int addPrize(Prize prize,HttpSession session)
     {
-        System.out.println("/student/addPrize success!");
+        System.out.println("/student/addPrize");
         User user = (User) session.getAttribute("student");
         prize.setU_id(user.getU_id());
         userMapper.addPrize(prize);
@@ -483,7 +481,7 @@ public class StudentController {
     @ResponseBody
     public int modifyPrize(Prize prize,HttpSession session)
     {
-        System.out.println("/student/modifyPrize success!");
+        System.out.println("/student/modifyPrize");
         User user = (User) session.getAttribute("student");
         prize.setU_id(user.getU_id());
         userMapper.modifyPrize(prize);
@@ -494,7 +492,7 @@ public class StudentController {
     @ResponseBody
     public int deletePrize(@RequestParam int p_id)
     {
-        System.out.println("/student/deletePrize success!");
+        System.out.println("/student/deletePrize");
         userMapper.deletePrize(p_id);
         return 1;
     }
@@ -505,7 +503,7 @@ public class StudentController {
     @ResponseBody
     public int addResearch(Research research,HttpSession session)
     {
-        System.out.println("/student/addResearch success!");
+        System.out.println("/student/addResearch");
         User user = (User) session.getAttribute("student");
         research.setU_id(user.getU_id());
         userMapper.addResearch(research);
@@ -516,7 +514,7 @@ public class StudentController {
     @ResponseBody
     public int modifyResearch(Research research,HttpSession session)
     {
-        System.out.println("/student/modifyResearch success!");
+        System.out.println("/student/modifyResearch");
         User user = (User) session.getAttribute("student");
         research.setU_id(user.getU_id());
         userMapper.modifyResearch(research);
@@ -527,7 +525,7 @@ public class StudentController {
     @ResponseBody
     public int deleteResearch(@RequestParam int r_id)
     {
-        System.out.println("/student/deleteResearch success!");
+        System.out.println("/student/deleteResearch");
         userMapper.deleteResearch(r_id);
         return 1;
     }
@@ -538,7 +536,7 @@ public class StudentController {
     @ResponseBody
     public int addSocial(Social social,HttpSession session)
     {
-        System.out.println("/student/addSocial success!");
+        System.out.println("/student/addSocial");
         User user = (User) session.getAttribute("student");
         social.setU_id(user.getU_id());
         userMapper.addSocial(social);
@@ -549,7 +547,7 @@ public class StudentController {
     @ResponseBody
     public int modifySocial(Social social,HttpSession session)
     {
-        System.out.println("/student/modifySocial success!");
+        System.out.println("/student/modifySocial");
         User user = (User) session.getAttribute("student");
         social.setU_id(user.getU_id());
         userMapper.modifySocial(social);
@@ -560,7 +558,7 @@ public class StudentController {
     @ResponseBody
     public int deleteSocial(@RequestParam int s_id)
     {
-        System.out.println("/student/deleteSocial success!");
+        System.out.println("/student/deleteSocial");
         userMapper.deleteSocial(s_id);
         return 1;
     }
@@ -570,7 +568,7 @@ public class StudentController {
     @ResponseBody
     public int addApplication(Application application,HttpSession session)
     {
-        System.out.println("/student/addApplication success!");
+        System.out.println("/student/addApplication");
         User user = (User) session.getAttribute("student");
         application.setU_id(user.getU_id());
         int tmp=userMapper.checkCountApplication(application);
@@ -587,7 +585,7 @@ public class StudentController {
     @ResponseBody
     public int modifyApplication(Application application,HttpSession session)
     {
-        System.out.println("/student/modifyApplication success!");
+        System.out.println("/student/modifyApplication");
         User user = (User) session.getAttribute("student");
         application.setU_id(user.getU_id());
         int tmp=userMapper.checkSubmit2(application.getA_id());
@@ -603,7 +601,7 @@ public class StudentController {
     @ResponseBody
     public int deleteApplication(@RequestParam int a_id)
     {
-        System.out.println("/student/deleteApplication success!");
+        System.out.println("/student/deleteApplication");
         int tmp=userMapper.checkSubmit2(a_id);
         if(tmp==0){
             userMapper.deleteApplication(a_id);
@@ -620,7 +618,7 @@ public class StudentController {
         /*
          * 提交申请
          * */
-        System.out.println("/admin/submitApplication success!");
+        System.out.println("/admin/submitApplication");
         int tmp=userMapper.checkSubmit(application);
         if(tmp==0){
             userMapper.submitReview(application);
@@ -637,7 +635,7 @@ public class StudentController {
         /*
          * 接受复试
          * */
-        System.out.println("/student/acceptRetest success!");
+        System.out.println("/student/acceptRetest");
         int tmp1=userMapper.checkCheckPass(application);
         int tmp2=userMapper.checkRetest(application);
         if(tmp1==1 && tmp2==-1){
@@ -659,7 +657,7 @@ public class StudentController {
         /*
          * 拒绝复试
          * */
-        System.out.println("/student/refuseRetest success!");
+        System.out.println("/student/refuseRetest");
         int tmp1=userMapper.checkCheckPass(application);
         int tmp2=userMapper.checkRetest(application);
         if(tmp1==1 && tmp2==-1){
@@ -681,7 +679,7 @@ public class StudentController {
         /*
          * 接受拟录取
          * */
-        System.out.println("/student/acceptAdmit success!");
+        System.out.println("/student/acceptAdmit");
         int tmp1=userMapper.checkRetestPass(application);
         int tmp2=userMapper.checkAdmitAccept(application);
         int tmp3=userMapper.checkOneApplication(application);
@@ -707,7 +705,7 @@ public class StudentController {
         /*
          * 拒绝拟录取
          * */
-        System.out.println("/student/refuseAdmit success!");
+        System.out.println("/student/refuseAdmit");
         int tmp1=userMapper.checkRetestPass(application);
         int tmp2=userMapper.checkAdmitAccept(application);
         if(tmp1==1 && tmp2==-1){
@@ -720,6 +718,20 @@ public class StudentController {
         else {
             return 3;
         }
+    }
+
+    @RequestMapping("/findUsername")
+    @ResponseBody
+    public User findUsername(HttpSession session)
+    {
+        /*
+         * 查找用户名
+         * */
+        System.out.println("/student/findUsername");
+        System.out.println("查找用户名");
+        User user = (User) session.getAttribute("student");
+        User userData=userMapper.findBaseInfo(user.getU_id());
+        return userData;
     }
 
 }

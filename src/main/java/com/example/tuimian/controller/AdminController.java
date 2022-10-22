@@ -237,7 +237,7 @@ public class AdminController {
 //    @ResponseBody
 //    public void submit(User user)
 //    {
-//        System.out.println("/admin/user success!");
+//        System.out.println("/admin/user");
 //        userMapper.save(user);
 //    }
 
@@ -248,13 +248,16 @@ public class AdminController {
         /*
         * 修改志愿信息
         * */
-        System.out.println("/admin/modify success!");
+        System.out.println("/admin/modifyApplication");
         int tmp1=userMapper.checkCheckPass(application);
-        if(tmp1==-1){
+        int tmp2=userMapper.checkSubmit(application);
+        if(tmp1==-1 && tmp2==1){
             userMapper.updateById(application);
             return 1;
-        }else{
+        }else if(tmp1!=-1){
             return 2;
+        }else{
+            return 3;
         }
     }
 
@@ -265,7 +268,7 @@ public class AdminController {
         /*
         * 审核通过，发复试通知
         * */
-        System.out.println("/admin/checkPass success!");
+        System.out.println("/admin/checkPass");
         int tmp1=userMapper.checkSubmit(application);
         int tmp2=userMapper.checkCheckPass(application);
         if(tmp1==1 && tmp2==-1) // 已提交并且未审核
@@ -288,7 +291,7 @@ public class AdminController {
         /*
          * 审核不通过
          * */
-        System.out.println("/admin/checkFail success!");
+        System.out.println("/admin/checkFail");
         int tmp1=userMapper.checkSubmit(application);
         int tmp2=userMapper.checkCheckPass(application);
         if(tmp1==1 && tmp2==-1) // 已提交并且未审核
@@ -311,7 +314,7 @@ public class AdminController {
         /*
          * 复试通过，发拟录取通知
          * */
-        System.out.println("/admin/retestPass success!");
+        System.out.println("/admin/retestPass");
         int tmp1=userMapper.checkRetest(application);
         int tmp2=userMapper.checkRetestPass(application);
         if(tmp1==1 && tmp2==-1) // 已提交并且未审核
@@ -334,7 +337,7 @@ public class AdminController {
         /*
          * 复试不通过
          * */
-        System.out.println("/admin/retestFail success!");
+        System.out.println("/admin/retestFail");
         int tmp1=userMapper.checkRetest(application);
         int tmp2=userMapper.checkRetestPass(application);
         if(tmp1==1 && tmp2==-1) // 已提交并且未审核
@@ -361,7 +364,7 @@ public class AdminController {
         /*
          * 提交申请
          * */
-        System.out.println("/admin/submitReview success!");
+        System.out.println("/admin/submitReview");
         userMapper.submitReview(application);
         return true;
     }
@@ -373,7 +376,7 @@ public class AdminController {
         /*
          * 接受复试
          * */
-        System.out.println("/admin/acceptRetest success!");
+        System.out.println("/admin/acceptRetest");
         int tmp1=userMapper.checkCheckPass(application);
         int tmp2=userMapper.checkRetest(application);
         if(tmp1==1 && tmp2==-1){
@@ -395,7 +398,7 @@ public class AdminController {
         /*
          * 拒绝复试
          * */
-        System.out.println("/admin/refuseRetest success!");
+        System.out.println("/admin/refuseRetest");
         int tmp1=userMapper.checkCheckPass(application);
         int tmp2=userMapper.checkRetest(application);
         if(tmp1==1 && tmp2==-1){
@@ -417,7 +420,7 @@ public class AdminController {
         /*
          * 接受拟录取
          * */
-        System.out.println("/admin/acceptAdmit success!");
+        System.out.println("/admin/acceptAdmit");
         int tmp1=userMapper.checkRetestPass(application);
         int tmp2=userMapper.checkAdmitAccept(application);
         int tmp3=userMapper.checkOneApplication(application);
@@ -443,7 +446,7 @@ public class AdminController {
         /*
          * 拒绝拟录取
          * */
-        System.out.println("/admin/refuseAdmit success!");
+        System.out.println("/admin/refuseAdmit");
         int tmp1=userMapper.checkRetestPass(application);
         int tmp2=userMapper.checkAdmitAccept(application);
         if(tmp1==1 && tmp2==-1){
@@ -464,7 +467,7 @@ public class AdminController {
 //    @ResponseBody
 //    public void delete(User user)
 //    {
-//        System.out.println("/admin/delete success!");
+//        System.out.println("/admin/delete");
 ////        System.out.println(user.getId());
 ////        System.out.println(user.getName());
 ////        System.out.println(user.getAddress());
@@ -511,7 +514,7 @@ public class AdminController {
         /*
          * 查询学生详细信息界面
          * */
-        System.out.println("/admin/lookupStudentHtml success!");
+        System.out.println("/admin/lookupStudentHtml");
         return "/admin/lookupStudent.html";
     }
 
@@ -521,7 +524,7 @@ public class AdminController {
         /*
          * 查询学生详细信息界面
          * */
-        System.out.println("/admin/ListAdmitHtml success!");
+        System.out.println("/admin/ListAdmitHtml");
         return "/admin/ListAdmit.html";
     }
 
@@ -531,7 +534,7 @@ public class AdminController {
         /*
          * 查询学生详细信息界面
          * */
-        System.out.println("/admin/precautionHtml success!");
+        System.out.println("/admin/precautionHtml");
         return "/admin/precaution.html";
     }
 

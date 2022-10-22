@@ -16,7 +16,7 @@
             </div>
             <div class="profile_info">
                 <span>欢迎,</span>
-                <h2>管理员</h2>
+                <h2 id="username">管理员</h2>
             </div>
         </div>
         <!-- /logo及登录用户信息 -->
@@ -56,7 +56,7 @@
                     <ul class=" navbar-right">
                         <li class="nav-item dropdown open" style="padding-left: 15px;">
                             <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                <img src="/images/profile.jpg" alt="">管理员
+                                <img src="/images/profile.jpg" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -65,7 +65,7 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item"  href="javascript:;">Help</a>
-                                <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                <a class="dropdown-item"  th:href="@{/loginHtml}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                             </div>
                         </li>
                         <li role="presentation" class="nav-item dropdown open">

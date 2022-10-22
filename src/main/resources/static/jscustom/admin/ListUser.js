@@ -117,6 +117,7 @@ require(
                             {
                                 field: 'u_sex',
                                 title: '性别',
+                                visible: false,
                             },
                             {
                                 field: 'u_nationality',
@@ -131,14 +132,17 @@ require(
                             {
                                 field: 'u_school',
                                 title: '本科学校',
+                                visible: false,
                             },
                             {
                                 field: 'u_major',
                                 title: '本科专业',
+                                visible: false,
                             },
                             {
                                 field: 'u_grank',
                                 title: '成绩排名',
+                                visible: false,
                                 formatter: function indexFormatter(value, row, index)
                                 {
                                     newvalue = '<span>'+value*100+'%</span>';
@@ -148,6 +152,7 @@ require(
                             {
                                 field: 'u_srank',
                                 title: '综合排名',
+                                visible: false,
                                 formatter: function indexFormatter(value, row, index)
                                 {
                                     newvalue = '<span>'+value*100+'%</span>';
@@ -157,6 +162,7 @@ require(
                             {
                                 field: 'u_idnumber',
                                 title: '身份证号',
+                                visible: false,
                             },
                             {
                                 field: 'u_politics',

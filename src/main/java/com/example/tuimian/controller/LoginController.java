@@ -21,11 +21,13 @@ public class LoginController {
 
 
     @RequestMapping("/loginHtml")
-    public String loginHtml()
+    public String loginHtml(HttpSession session)
     {
         /*
          * 登录界面
          * */
+        session.removeAttribute("student");
+        session.removeAttribute("admin");
         return "/login.html";
     }
 
@@ -38,6 +40,7 @@ public class LoginController {
         return "/register.html";
     }
 
+
     @RequestMapping("/validateUsername")
     @ResponseBody
     public String validateUsername(@RequestParam String u_username)
@@ -45,7 +48,7 @@ public class LoginController {
         /*
          * 验证用户名唯一性，唯一:{"valid":true},不唯一：{"valid"：false}
          * */
-        System.out.println("/validateUsername success!");
+        System.out.println("/validateUsername");
         boolean flag=true;
         int num=userMapper.validateUsername(u_username);
         if(num==0) flag=true; // 唯一
@@ -64,7 +67,7 @@ public class LoginController {
         /*
          * 注册功能
          * */
-        System.out.println("/register success!");
+        System.out.println("/register");
         int num=userMapper.validateUsername(user.getU_username());
         if(num==0){
             userMapper.save(user);
@@ -83,7 +86,7 @@ public class LoginController {
         /*
          * 登录功能
          * */
-        System.out.println("/login success!");
+        System.out.println("/login");
         int num=userMapper.validateUsername(user.getU_username());
         String password=userMapper.login(user);
 //        System.out.println("num:"+num);
@@ -97,6 +100,7 @@ public class LoginController {
             if(u_type==0){
                 session.setAttribute("student",user);
                 session.setMaxInactiveInterval(100*60);
+                System.out.println("sessionID:"+session.getId());
                 return 0; // 学生用户 用户名存在 密码正确
             }
             else{

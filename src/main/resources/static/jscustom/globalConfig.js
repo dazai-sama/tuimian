@@ -6,10 +6,15 @@ require.config({
         custom:['/gentelella-master/build/js/custom.min'],
         bootstrap_table:['https://cdn.bootcss.com/bootstrap-table/1.15.4/bootstrap-table.min'],
         bootstrap_table_CN:['https://cdn.bootcss.com/bootstrap-table/1.15.4/locale/bootstrap-table-zh-CN.min'],
+        bootstrap_table_export:['https://cdn.bootcss.com/bootstrap-table/1.15.4/extensions/export/bootstrap-table-export.min'],
         layer:['https://cdn.bootcss.com/layer/2.3/layer'],
         bootstrap_validator:['https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min'],
         bootstrap_validator_CN:['https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min'],
-        jqueryform:['https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min']
+        jqueryform:['https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min'],
+        jqueryvalidate:['https://cdn.bootcdn.net/ajax/libs/jquery-validate/1.19.5/jquery.validate'],
+        filesaver:['/libs/FileSaver/FileSaver.min'],
+        jspdf:['/libs/jsPDF/jspdf.umd.min'],
+        tableExport:['/tableExport.min']
     },
     map:{
         '*':{css:['https://cdn.bootcss.com/require-css/0.1.10/css.min.js']}
@@ -27,6 +32,9 @@ require.config({
         bootstrap_table_CN:{
             deps:['jquery','bootstrap','bootstrap_table']
         },
+        bootstrap_table_export:{
+            deps:['jquery','bootstrap','bootstrap_table']
+        },
         layer:{
             deps:['css!https://cdn.bootcss.com/layer/2.3/skin/layer.css']
         },
@@ -38,6 +46,18 @@ require.config({
         },
         jqueryform:{
             deps:['jquery']
+        },
+        jqueryvalidate:{
+            deps:['jquery']
+        },
+        filesaver: {
+            deps:['jquery']
+        },
+        jspdf: {
+            deps:['jquery']
+        },
+        tableExport: {
+            deps:['jquery','filesaver']
         },
         bootstrap3:{
             deps:['jquery','css!https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css','css!https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css']

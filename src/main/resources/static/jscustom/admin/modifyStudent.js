@@ -47,8 +47,10 @@ require(
                                 if(data==1){
                                     alert("志愿信息修改成功");
                                 }
-                                else{
+                                else if(data==2){
                                     alert("修改失败，该志愿已审核，无法更改");
+                                }else{
+                                    alert("修改失败，志愿未提交");
                                 }
                                 var mylay = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(mylay); // 关闭当前窗口页

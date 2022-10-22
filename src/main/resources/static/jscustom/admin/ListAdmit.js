@@ -2,7 +2,7 @@ require(
     ['/jscustom/globalConfig.js'],
     function () {
         requirejs(
-            ['jquery','bootstrap','custom','bootstrap_table','bootstrap_table_CN','layer','jqueryform'],
+            ['jquery','bootstrap','custom','bootstrap_table','bootstrap_table_CN','layer','jqueryform','bootstrap_table_export','filesaver','tableExport','jspdf'],
             function ($) {
                 //start 该处定义我们自己的脚本
 
@@ -29,11 +29,18 @@ require(
                     showToggle: false,          // 是否显示详细视图和列表视图的切换按钮
                     cardView: false,            // 是否显示详细视图
                     detailView: false,          // 是否显示父子表
+                    showExport: false,//工具栏上显示导出按钮
+                    exportTypes: ['json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'],//导出格式
 
                     // 行单击事件
                     onClickRow:function (row,$element)
                     {
                         var detail = "<h2><strong>"+row.u_name+"详细信息</strong></h2>";
+                        detail+="<p>学生ID:<b>"+row.u_id+"</b></p>";
+                        detail+="<p>性别:<b>"+row.u_sex+"</b></p>";
+                        detail+="<p>身份证号:<b>"+row.u_idnumber+"</b></p>";
+                        detail+="<p>邮箱:<b>"+row.u_email+"</b></p>";
+                        detail+="<p>政治面貌:<b>"+row.u_politics+"</b></p>";
                         detail+="<p>手机号:<b>"+row.u_phone+"</b></p>";
                         detail+="<p>本科学校:<b>"+row.u_school+"</b></p>";
                         detail+="<p>本科专业:<b>"+row.u_major+"</b></p>";
@@ -263,6 +270,12 @@ require(
                     ]
                 });
 
+                $('#btn_export').click(function (){
+                    $('#tb_stuAdmit').tableExport({
+                        type: 'excel',
+                        fileName: 'AdmissionList',  //导出Excel的名称
+                    })
+                })
 
                 //end 该处定义我们自己的脚本
             }
