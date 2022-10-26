@@ -157,7 +157,7 @@ require(
                 }
 
                 $('#btn_nextSocial').bind('click',function (){
-                    window.location.href="http://localhost:8090/student/socialInfoHtml";
+                    window.location.href="/student/socialInfoHtml";
                 });
 
                 //end 该处定义我们自己的脚本

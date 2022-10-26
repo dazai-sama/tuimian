@@ -8,7 +8,7 @@ require(
 
 
                 $('#btn_nextBase').bind('click',function (){
-                    window.location.href="http://localhost:8090/student/baseInfoHtml";
+                    window.location.href="/student/baseInfoHtml";
                 });
 
                 //end 该处定义我们自己的脚本

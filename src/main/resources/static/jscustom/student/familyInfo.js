@@ -162,7 +162,7 @@ require(
                 }
 
                 $('#btn_nextPrize').bind('click',function (){
-                    window.location.href="http://localhost:8090/student/prizeInfoHtml";
+                    window.location.href="/student/prizeInfoHtml";
                 });
 
                 //end 该处定义我们自己的脚本

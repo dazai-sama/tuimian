@@ -52,7 +52,7 @@ require(
 
 
                 $('#btn_nextFamily').bind('click',function (){
-                    window.location.href="http://localhost:8090/student/familyInfoHtml";
+                    window.location.href="/student/familyInfoHtml";
                 });
 
                 //end 该处定义我们自己的脚本

@@ -51,19 +51,13 @@ require(
                         //     $("#detail_stu").html(detail);
                         // },
 
-                        // 根据行中某列的值，动态渲染整行的颜色
+                        // // 根据行中某列的值，动态渲染整行的颜色
                         // rowStyle: function (row,index){
-                        //     if(row.age>=21)
+                        //     if(row.a_admit==1)
                         //     {
                         //         return {
-                        //             css:{color:'blue'}, // 本行文字的颜色（自定义）
-                        //             classes:'table-warning' // 本行背景色（bootstrap样式）
-                        //         };
-                        //     }
-                        //     else if(row.age<21)
-                        //     {
-                        //         return {
-                        //             css:{background:'#DA9111'}  // 本行文字的颜色（自定义）
+                        //             css:{color:'green'}, // 本行文字的颜色（自定义）
+                        //             classes:'table-success' // 本行背景色（bootstrap样式）
                         //         };
                         //     }
                         //     else {
@@ -94,6 +88,7 @@ require(
                             {
                                 field: 'u_id',
                                 title: '学生ID',
+                                visible: false,
                             },
                             {
                                 field: 'u_username',

@@ -47,12 +47,12 @@ require(
                             success: function (data) { // 提交完成执行的操作
                                 if(data==0){
                                     alert("登录成功，你是学生用户");
-                                    window.location.href="http://localhost:8090/student/precautionHtml";
+                                    window.location.href="/student/precautionHtml";
                                 }
                                 else if(data==1)
                                 {
                                     alert("登录成功，你是管理员用户");
-                                    window.location.href="http://localhost:8090/admin/precautionHtml";
+                                    window.location.href="/admin/precautionHtml";
                                 }
                                 else if(data==2){
                                     alert("登录失败，此账号未注册，请先注册");

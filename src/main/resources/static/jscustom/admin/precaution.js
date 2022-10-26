@@ -7,7 +7,7 @@ require(
                 //start 该处定义我们自己的脚本
 
                 $('#btn_readAdmin').bind('click',function (){
-                    window.location.href="http://localhost:8090/admin/listStuInfo";
+                    window.location.href="/admin/listStuInfo";
                 });
 
                 //end 该处定义我们自己的脚本

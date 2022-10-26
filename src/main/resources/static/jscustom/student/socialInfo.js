@@ -157,7 +157,7 @@ require(
                 }
 
                 $('#btn_nextApp').bind('click',function (){
-                    window.location.href="http://localhost:8090/student/applicationInfoHtml";
+                    window.location.href="/student/applicationInfoHtml";
                 });
 
                 //end 该处定义我们自己的脚本

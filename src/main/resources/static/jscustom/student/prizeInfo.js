@@ -157,7 +157,7 @@ require(
                 }
 
                 $('#btn_nextResearch').bind('click',function (){
-                    window.location.href="http://localhost:8090/student/researchInfoHtml";
+                    window.location.href="/student/researchInfoHtml";
                 });
 
                 //end 该处定义我们自己的脚本

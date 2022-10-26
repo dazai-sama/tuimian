@@ -4,7 +4,7 @@ require(
         requirejs(
             ['jquery','bootstrap','custom'],
             function($){
-                window.location.href="http://localhost:8090/loginHtml";
+                window.location.href="/loginHtml";
             }
         )
     }
