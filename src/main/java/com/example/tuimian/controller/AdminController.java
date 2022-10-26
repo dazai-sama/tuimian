@@ -18,12 +18,69 @@ public class AdminController {
     UserMapper userMapper;
 
 
+    /*
+     * 1.页面跳转
+     * */
+    @RequestMapping("/listStuInfo")
+    public String listStudent()
+    {
+        /*
+         * 志愿信息列表界面
+         * */
+        return "admin/listStuInfo.html";
+    }
+
+    @RequestMapping("/modifyStudentHtml")
+    public String modifyStudentHtml()
+    {
+        /*
+         * 修改志愿信息界面
+         * */
+        return "admin/modifyStudent.html";
+    }
+
+
+    @RequestMapping("/lookupStudentHtml")
+    public String lookupStudentHtml()
+    {
+        /*
+         * 查询学生详细信息界面
+         * */
+        System.out.println("/admin/lookupStudentHtml");
+        return "admin/lookupStudent.html";
+    }
+
+    @RequestMapping("/ListAdmitHtml")
+    public String ListAdmitHtml()
+    {
+        /*
+         * 录取名单界面
+         * */
+        System.out.println("/admin/ListAdmitHtml");
+        return "admin/ListAdmit.html";
+    }
+
+    @RequestMapping("/precautionHtml")
+    public String precautionHtml()
+    {
+        /*
+         * 管理员注意事项界面
+         * */
+        System.out.println("/admin/precautionHtml");
+        return "admin/precaution.html";
+    }
+
+
+
+    /*
+    * 2.数据处理
+    * */
     @RequestMapping("/findPageStuAdmit")
     @ResponseBody
     public String findPageStuAdmit(@RequestBody(required = false) Map<String,Object> reqMap)
     {
         /*
-         * 分页查询社会实践信息
+         * 分页查询录取名单信息
          * */
         int pageNum=0;
         int pageSize=10;
@@ -168,6 +225,9 @@ public class AdminController {
     @ResponseBody
     public String findPageFamily(@RequestBody(required = false) Map<String,Object> reqMap)
     {
+        /*
+         * 分页查询家庭成员信息
+         * */
         int pageNum=0;
         int pageSize=10;
         int u_id=0;
@@ -233,13 +293,6 @@ public class AdminController {
     }
 
 
-//    @RequestMapping("/submit")
-//    @ResponseBody
-//    public void submit(User user)
-//    {
-//        System.out.println("/admin/user");
-//        userMapper.save(user);
-//    }
 
     @RequestMapping("/modifyApplication")
     @ResponseBody
@@ -351,191 +404,6 @@ public class AdminController {
         else { // 未审核
             return 3;
         }
-    }
-
-
-    /*
-    * 学生端操作
-    * */
-    @RequestMapping("/submitReview")
-    @ResponseBody
-    public Boolean submitReview(Application application)
-    {
-        /*
-         * 提交申请
-         * */
-        System.out.println("/admin/submitReview");
-        userMapper.submitReview(application);
-        return true;
-    }
-
-    @RequestMapping("/acceptRetest")
-    @ResponseBody
-    public int acceptRetest(Application application)
-    {
-        /*
-         * 接受复试
-         * */
-        System.out.println("/admin/acceptRetest");
-        int tmp1=userMapper.checkCheckPass(application);
-        int tmp2=userMapper.checkRetest(application);
-        if(tmp1==1 && tmp2==-1){
-            userMapper.acceptRetest(application);
-            return 1;
-        }
-        else if(tmp1!=1){
-            return 2;
-        }
-        else {
-            return 3;
-        }
-    }
-
-    @RequestMapping("/refuseRetest")
-    @ResponseBody
-    public int refuseRetest(Application application)
-    {
-        /*
-         * 拒绝复试
-         * */
-        System.out.println("/admin/refuseRetest");
-        int tmp1=userMapper.checkCheckPass(application);
-        int tmp2=userMapper.checkRetest(application);
-        if(tmp1==1 && tmp2==-1){
-            userMapper.refuseRetest(application);
-            return 1;
-        }
-        else if(tmp1!=1){
-            return 2;
-        }
-        else {
-            return 3;
-        }
-    }
-
-    @RequestMapping("/acceptAdmit")
-    @ResponseBody
-    public int acceptAdmit(Application application)
-    {
-        /*
-         * 接受拟录取
-         * */
-        System.out.println("/admin/acceptAdmit");
-        int tmp1=userMapper.checkRetestPass(application);
-        int tmp2=userMapper.checkAdmitAccept(application);
-        int tmp3=userMapper.checkOneApplication(application);
-        if(tmp1==1 && tmp2==-1 && tmp3==0){ // 收到通知 没进行过选择 没被其他志愿录取
-            userMapper.acceptAdmit(application);
-            return 1;
-        }
-        else if(tmp1!=1){ // 没收到通知
-            return 2;
-        }
-        else if(tmp2!=-1){ // 进行过选择
-            return 3;
-        }
-        else{
-            return 4; // 已经被其他志愿录取
-        }
-    }
-
-    @RequestMapping("/refuseAdmit")
-    @ResponseBody
-    public int refuseAdmit(Application application)
-    {
-        /*
-         * 拒绝拟录取
-         * */
-        System.out.println("/admin/refuseAdmit");
-        int tmp1=userMapper.checkRetestPass(application);
-        int tmp2=userMapper.checkAdmitAccept(application);
-        if(tmp1==1 && tmp2==-1){
-            userMapper.refuseAdmit(application);
-            return 1;
-        }
-        else if(tmp1!=1){
-            return 2;
-        }
-        else {
-            return 3;
-        }
-    }
-
-
-
-//    @RequestMapping("/delete")
-//    @ResponseBody
-//    public void delete(User user)
-//    {
-//        System.out.println("/admin/delete");
-////        System.out.println(user.getId());
-////        System.out.println(user.getName());
-////        System.out.println(user.getAddress());
-////        System.out.println(user.getAge());
-////        System.out.println(user.getSex());
-////        System.out.println(user.getPhone());
-//        userMapper.deleteById(user);
-//
-//    }
-
-
-    /*
-    * 页面跳转
-    * */
-    @RequestMapping("/listStuInfo")
-    public String listStudent()
-    {
-        /*
-         * 志愿信息列表界面
-         * */
-        return "/admin/listStuInfo.html";
-    }
-
-    @RequestMapping("/addStudentHtml")
-    public String addStudentHtml()
-    {
-        //
-        return "/admin/addStudent.html";
-    }
-
-    @RequestMapping("/modifyStudentHtml")
-    public String modifyStudentHtml()
-    {
-        /*
-         * 修改志愿信息信息界面
-         * */
-        return "/admin/modifyStudent.html";
-    }
-
-
-    @RequestMapping("/lookupStudentHtml")
-    public String lookupStudentHtml()
-    {
-        /*
-         * 查询学生详细信息界面
-         * */
-        System.out.println("/admin/lookupStudentHtml");
-        return "/admin/lookupStudent.html";
-    }
-
-    @RequestMapping("/ListAdmitHtml")
-    public String ListAdmitHtml()
-    {
-        /*
-         * 查询学生详细信息界面
-         * */
-        System.out.println("/admin/ListAdmitHtml");
-        return "/admin/ListAdmit.html";
-    }
-
-    @RequestMapping("/precautionHtml")
-    public String precautionHtml()
-    {
-        /*
-         * 查询学生详细信息界面
-         * */
-        System.out.println("/admin/precautionHtml");
-        return "/admin/precaution.html";
     }
 
 }

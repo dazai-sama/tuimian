@@ -28,7 +28,7 @@ public class LoginController {
          * */
         session.removeAttribute("student");
         session.removeAttribute("admin");
-        return "/login.html";
+        return "login.html";
     }
 
     @RequestMapping("/registerHtml")
@@ -37,7 +37,7 @@ public class LoginController {
         /*
          * 注册界面
          * */
-        return "/register.html";
+        return "register.html";
     }
 
 
@@ -76,7 +76,6 @@ public class LoginController {
         else{
             return 2;
         }
-
     }
 
     @RequestMapping("/login")
@@ -89,10 +88,6 @@ public class LoginController {
         System.out.println("/login");
         int num=userMapper.validateUsername(user.getU_username());
         String password=userMapper.login(user);
-//        System.out.println("num:"+num);
-//        System.out.println("password:"+password);
-//        System.out.println("user.getU_password():"+user.getU_password());
-//        System.out.println(Objects.equals(password, user.getU_password()));
         if(num==1 && Objects.equals(password, user.getU_password())){
             int u_id=userMapper.findIdByName(user);
             int u_type=userMapper.findTypeById(u_id);
@@ -108,7 +103,6 @@ public class LoginController {
                 session.setMaxInactiveInterval(100*60);
                 return 1; // 管理员用户 用户名存在 密码正确
             }
-
         }
         else if(num==0){
             return 2; // 用户未注册

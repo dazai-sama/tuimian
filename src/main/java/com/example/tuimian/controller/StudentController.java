@@ -21,6 +21,10 @@ public class StudentController {
     @Resource
     UserMapper userMapper;
 
+
+    /*
+     * 1.页面跳转
+     * */
     @RequestMapping("/precautionHtml")
     public String precautionHtml()
     {
@@ -28,7 +32,7 @@ public class StudentController {
          * 学生注意事项界面
          * */
         System.out.println("/student/precautionHtml");
-        return "/student/precaution.html";
+        return "student/precaution.html";
     }
 
     @RequestMapping("/baseInfoHtml")
@@ -38,117 +42,117 @@ public class StudentController {
          * 学生个人基本信息填写界面
          * */
         System.out.println("/student/baseInfoHtml");
-        return "/student/baseInfo.html";
+        return "student/baseInfo.html";
     }
 
     @RequestMapping("/familyInfoHtml")
     public String familyInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生家庭成员界面
          * */
         System.out.println("/student/familyInfoHtml");
-        return "/student/familyInfo.html";
+        return "student/familyInfo.html";
     }
 
     @RequestMapping("/prizeInfoHtml")
     public String prizeInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生竞赛获奖界面
          * */
         System.out.println("/student/prizeInfoHtml");
-        return "/student/prizeInfo.html";
+        return "student/prizeInfo.html";
     }
 
     @RequestMapping("/researchInfoHtml")
     public String researchInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生科研经历界面
          * */
         System.out.println("/student/researchInfoHtml");
-        return "/student/researchInfo.html";
+        return "student/researchInfo.html";
     }
 
     @RequestMapping("/socialInfoHtml")
     public String socialInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生社会实践界面
          * */
         System.out.println("/student/socialInfoHtml");
-        return "/student/socialInfo.html";
+        return "student/socialInfo.html";
     }
 
     @RequestMapping("/applicationInfoHtml")
     public String applicationInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生志愿信息界面
          * */
         System.out.println("/student/applicationInfoHtml");
-        return "/student/applicationInfo.html";
+        return "student/applicationInfo.html";
     }
 
     @RequestMapping("/retestInfoHtml")
     public String retestInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生复试信息界面
          * */
         System.out.println("/student/retestInfoHtml");
-        return "/student/retestInfo.html";
+        return "student/retestInfo.html";
     }
 
     @RequestMapping("/admitInfoHtml")
     public String admitInfoHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 学生拟录取信息界面
          * */
         System.out.println("/student/admitInfoHtml");
-        return "/student/admitInfo.html";
+        return "student/admitInfo.html";
     }
 
     @RequestMapping("/addFamilyHtml")
     public String addFamilyHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 添加家庭成员界面
          * */
         System.out.println("/student/addFamilyHtml");
-        return "/student/addFamily.html";
+        return "student/addFamily.html";
     }
 
     @RequestMapping("/addPrizeHtml")
     public String addPrizeHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 添加奖项界面
          * */
         System.out.println("/student/addPrizeHtml");
-        return "/student/addPrize.html";
+        return "student/addPrize.html";
     }
 
     @RequestMapping("/addResearchHtml")
     public String addResearchHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 添加科研经历界面
          * */
         System.out.println("/student/addResearchHtml");
-        return "/student/addResearch.html";
+        return "student/addResearch.html";
     }
 
     @RequestMapping("/addSocialHtml")
     public String addSocialHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 添加社会实践界面
          * */
         System.out.println("/student/addSocialHtml");
-        return "/student/addSocial.html";
+        return "student/addSocial.html";
     }
 
 
@@ -156,73 +160,73 @@ public class StudentController {
     public String modifyFamilyHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 修改家庭成员界面
          * */
         System.out.println("/student/modifyFamilyHtml");
-        return "/student/modifyFamily.html";
+        return "student/modifyFamily.html";
     }
 
     @RequestMapping("/modifyPrizeHtml")
     public String modifyPrizeHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 修改奖项界面
          * */
         System.out.println("/student/modifyPrizeHtml");
-        return "/student/modifyPrize.html";
+        return "student/modifyPrize.html";
     }
 
     @RequestMapping("/modifyResearchHtml")
     public String modifyResearchHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 修改科研经历界面
          * */
         System.out.println("/student/modifyResearchHtml");
-        return "/student/modifyResearch.html";
+        return "student/modifyResearch.html";
     }
 
     @RequestMapping("/modifySocialHtml")
     public String modifySocialHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 修改社会实践界面
          * */
         System.out.println("/student/modifySocialHtml");
-        return "/student/modifySocial.html";
+        return "student/modifySocial.html";
     }
 
     @RequestMapping("/modifyApplicationHtml")
     public String modifyApplicationHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 修改志愿界面
          * */
         System.out.println("/student/modifyApplicationHtml");
-        return "/student/modifyApplication.html";
+        return "student/modifyApplication.html";
     }
 
     @RequestMapping("/addApplicationHtml")
     public String addApplicationHtml()
     {
         /*
-         * 学生个人基本信息填写界面
+         * 添加志愿界面
          * */
         System.out.println("/student/addApplicationHtml");
-        return "/student/addApplication.html";
+        return "student/addApplication.html";
     }
 
 
 
     /*
-    * 返回数据
-    * */
+     * 2.数据处理
+     * */
     @RequestMapping("/findBaseInfo")
     @ResponseBody
     public User findBaseInfo(HttpSession session)
     {
         /*
-         * 学生个人基本信息数据
+         * 查询学生个人基本信息数据
          * */
         System.out.println("/student/findBaseInfo");
         User user = (User) session.getAttribute("student");
@@ -238,12 +242,11 @@ public class StudentController {
     public int baseInfoSubmit(User user,HttpSession session)
     {
         /*
-         * 学生个人基本信息数据
+         * 提交个人基本信息
          * */
         System.out.println("/student/baseInfoSubmit");
         User tmp = (User) session.getAttribute("student");
         user.setU_id(tmp.getU_id());
-//        System.out.println("name:"+user.getU_name());
         userMapper.saveBaseInfo(user);
         return 1;
     }
@@ -253,6 +256,9 @@ public class StudentController {
     @ResponseBody
     public String findPageFamily(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询家庭成员信息
+         * */
         System.out.println("/student/findPageFamily");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -279,6 +285,9 @@ public class StudentController {
     @ResponseBody
     public String findPagePrize(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询竞赛获奖信息
+         * */
         System.out.println("/student/findPagePrize");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -305,6 +314,9 @@ public class StudentController {
     @ResponseBody
     public String findPageResearch(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询科研经历信息
+         * */
         System.out.println("/student/findPageResearch");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -331,6 +343,9 @@ public class StudentController {
     @ResponseBody
     public String findPageSocial(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询社会实践信息
+         * */
         System.out.println("/student/findPageSocial");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -357,6 +372,9 @@ public class StudentController {
     @ResponseBody
     public String findPageApplication(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询志愿信息
+         * */
         System.out.println("/student/findPageApplication");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -383,6 +401,9 @@ public class StudentController {
     @ResponseBody
     public String findPageRetest(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询复试信息
+         * */
         System.out.println("/student/findPageRetest");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -409,6 +430,9 @@ public class StudentController {
     @ResponseBody
     public String findPageAdmit(@RequestBody(required = false) Map<String,Object> reqMap,HttpSession session)
     {
+        /*
+         * 分页查询拟录取信息
+         * */
         System.out.println("/student/findPageAdmit");
         User user = (User) session.getAttribute("student");
         int pageNum=0;
@@ -437,6 +461,9 @@ public class StudentController {
     @ResponseBody
     public int addFamily(Family family,HttpSession session)
     {
+        /*
+         * 添加家庭成员
+         * */
         System.out.println("/student/addFamily");
         User user = (User) session.getAttribute("student");
         family.setU_id(user.getU_id());
@@ -448,6 +475,9 @@ public class StudentController {
     @ResponseBody
     public int modifyFamily(Family family,HttpSession session)
     {
+        /*
+         * 修改家庭成员
+         * */
         System.out.println("/student/modifyFamily");
         User user = (User) session.getAttribute("student");
         family.setU_id(user.getU_id());
@@ -459,6 +489,9 @@ public class StudentController {
     @ResponseBody
     public int deleteFamily(@RequestParam int f_id)
     {
+        /*
+         * 删除家庭成员
+         * */
         System.out.println("/student/deleteFamily");
         userMapper.deleteFamily(f_id);
         return 1;
@@ -470,6 +503,9 @@ public class StudentController {
     @ResponseBody
     public int addPrize(Prize prize,HttpSession session)
     {
+        /*
+         * 添加奖项
+         * */
         System.out.println("/student/addPrize");
         User user = (User) session.getAttribute("student");
         prize.setU_id(user.getU_id());
@@ -481,6 +517,9 @@ public class StudentController {
     @ResponseBody
     public int modifyPrize(Prize prize,HttpSession session)
     {
+        /*
+         * 修改奖项
+         * */
         System.out.println("/student/modifyPrize");
         User user = (User) session.getAttribute("student");
         prize.setU_id(user.getU_id());
@@ -492,6 +531,9 @@ public class StudentController {
     @ResponseBody
     public int deletePrize(@RequestParam int p_id)
     {
+        /*
+         * 删除奖项
+         * */
         System.out.println("/student/deletePrize");
         userMapper.deletePrize(p_id);
         return 1;
@@ -503,6 +545,9 @@ public class StudentController {
     @ResponseBody
     public int addResearch(Research research,HttpSession session)
     {
+        /*
+         * 添加科研经历
+         * */
         System.out.println("/student/addResearch");
         User user = (User) session.getAttribute("student");
         research.setU_id(user.getU_id());
@@ -514,6 +559,9 @@ public class StudentController {
     @ResponseBody
     public int modifyResearch(Research research,HttpSession session)
     {
+        /*
+         * 修改科研经历
+         * */
         System.out.println("/student/modifyResearch");
         User user = (User) session.getAttribute("student");
         research.setU_id(user.getU_id());
@@ -525,6 +573,9 @@ public class StudentController {
     @ResponseBody
     public int deleteResearch(@RequestParam int r_id)
     {
+        /*
+         * 删除科研经历
+         * */
         System.out.println("/student/deleteResearch");
         userMapper.deleteResearch(r_id);
         return 1;
@@ -536,6 +587,9 @@ public class StudentController {
     @ResponseBody
     public int addSocial(Social social,HttpSession session)
     {
+        /*
+         * 添加社会实践
+         * */
         System.out.println("/student/addSocial");
         User user = (User) session.getAttribute("student");
         social.setU_id(user.getU_id());
@@ -547,6 +601,9 @@ public class StudentController {
     @ResponseBody
     public int modifySocial(Social social,HttpSession session)
     {
+        /*
+         * 修改科研经历
+         * */
         System.out.println("/student/modifySocial");
         User user = (User) session.getAttribute("student");
         social.setU_id(user.getU_id());
@@ -558,6 +615,9 @@ public class StudentController {
     @ResponseBody
     public int deleteSocial(@RequestParam int s_id)
     {
+        /*
+         * 删除科研经历
+         * */
         System.out.println("/student/deleteSocial");
         userMapper.deleteSocial(s_id);
         return 1;
@@ -568,6 +628,9 @@ public class StudentController {
     @ResponseBody
     public int addApplication(Application application,HttpSession session)
     {
+        /*
+         * 添加志愿信息
+         * */
         System.out.println("/student/addApplication");
         User user = (User) session.getAttribute("student");
         application.setU_id(user.getU_id());
@@ -585,6 +648,9 @@ public class StudentController {
     @ResponseBody
     public int modifyApplication(Application application,HttpSession session)
     {
+        /*
+         * 修改志愿信息
+         * */
         System.out.println("/student/modifyApplication");
         User user = (User) session.getAttribute("student");
         application.setU_id(user.getU_id());
@@ -601,6 +667,9 @@ public class StudentController {
     @ResponseBody
     public int deleteApplication(@RequestParam int a_id)
     {
+        /*
+         * 删除志愿信息
+         * */
         System.out.println("/student/deleteApplication");
         int tmp=userMapper.checkSubmit2(a_id);
         if(tmp==0){
@@ -616,7 +685,7 @@ public class StudentController {
     public int submitApplication(Application application)
     {
         /*
-         * 提交申请
+         * 提交志愿申请
          * */
         System.out.println("/admin/submitApplication");
         int tmp=userMapper.checkSubmit(application);
